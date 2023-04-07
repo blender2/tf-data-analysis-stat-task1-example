@@ -6,7 +6,8 @@ chat_id = 469912664 # Ваш chat ID, не меняйте название пе�
 
 def solution(x: np.array) -> float:
     t = 74
-    x = x*2.0/t/t
-    div = np.std(x)
-    print(div)
-    return x.mean() # Ваш ответ
+    n = len(x)
+    z = np.random.laplace(0, 1, n)
+    x = x - z
+    D = 2.0/t/t
+    return D*x.mean() # Ваш ответ
